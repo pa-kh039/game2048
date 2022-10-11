@@ -87,7 +87,7 @@ def move_up(mat):
     trans_mat=transpose(mat)
     new_mat,c1=compress(trans_mat)
     new_mat,c2=merge(new_mat)
-    new_mat=compress(new_mat)
+    new_mat,temp=compress(new_mat)
     new_mat=transpose(new_mat)
     return new_mat, c1 or c2
 
@@ -96,7 +96,7 @@ def move_down(mat):
     reversed_mat=reverse(trans_mat)
     new_mat,c1=compress(reversed_mat)
     new_mat,c2=merge(new_mat)
-    new_mat=compress(new_mat)
+    new_mat,temp=compress(new_mat)
     new_mat=reverse(new_mat)
     new_mat=transpose(new_mat)
     return new_mat, c1 or c2
@@ -112,7 +112,7 @@ def move_right(mat):
     new_mat=reverse(mat)
     new_mat,c1=compress(new_mat)
     new_mat,c2=merge(new_mat)
-    new_mat=compress(new_mat)
+    new_mat,temp=compress(new_mat)
     fin_mat=reverse(new_mat)
     return fin_mat, c1 or c2
 
