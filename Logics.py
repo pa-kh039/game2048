@@ -59,6 +59,7 @@ def merge(mat):
             if mat[i][j]==mat[i][j+1] and mat[i][j]>0:
                 mat[i][j]=2*mat[i][j]
                 mat[i][j+1]=0
+    return mat
 
 def reverse(mat):
     #it reverses each row of the matrix
@@ -80,9 +81,9 @@ def transpose(mat):
 def move_up(mat):
     trans_mat=transpose(mat)
     new_mat=compress(trans_mat)
-    new_mat=merge(trans_mat)
-    new_mat=compress(trans_mat)
-    new_mat=transpose(trans_mat)
+    new_mat=merge(new_mat)
+    new_mat=compress(new_mat)
+    new_mat=transpose(new_mat)
     return new_mat
 
 def move_down(mat):
@@ -108,3 +109,25 @@ def move_right(mat):
     new_mat=compress(new_mat)
     fin_mat=reverse(new_mat)
     return fin_mat
+
+# --------------testing-------------- #
+# mat=start_game()
+# print(mat)
+# add_new_2(mat)
+# print(mat)
+# add_new_2(mat)
+# print(mat)
+# mat=move_up(mat)
+# print(mat)
+# mat=move_right(mat)
+# print(mat)
+# add_new_2(mat)
+# print(mat)
+# mat=move_down(mat)
+# print(mat)
+# add_new_2(mat)
+# print(mat)
+# mat=move_left(mat)
+# print(mat)
+# mat=move_down(mat)
+# print(mat)
